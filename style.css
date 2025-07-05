@@ -1,0 +1,672 @@
+/* ========== Base Styles ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .nav-icons a {
+    text-decoration: none;
+    
+  }
+  .search-box {
+    display: none; /* Initially hidden */
+    position: absolute; /* Position it relative to the parent */
+    top: 50px; /* Adjust this to move the box below the search icon */
+    left: 0; /* Align it with the left edge of the parent */
+    background-color: white; /* Ensure the box has a background */
+    border: 1px solid #ccc; /* Add a border to make it visible */
+    padding: 10px; /* Add some padding for the input field */
+    z-index: 1000; /* Ensure it appears on top of other elements */
+  }
+  
+  .search-box input {
+    width: 200px; /* Adjust the width of the input field */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .search-box button {
+    border: none;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  .nav-icons img {
+    width: 24px;
+    cursor: pointer;
+  }
+
+  /* Hidden search box initially */
+ 
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    color: #222;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  /* ========== Container ========== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  /* ========== Navbar ========== */
+  .navbar {
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+    padding: 0rem 1rem;
+  }
+  
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 40px;
+  
+  }
+  
+  .nav-menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-menu a {
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s;
+  }
+  
+  .nav-menu a:hover {
+    color: #007bff;
+  }
+  
+  .nav-icons a img {
+    height: 20px;
+    margin-left: 1rem;
+  }
+
+  /* ========== Hero Section (Scaled to 320x100) ========== */
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  
+  .hero-slider-wrapper {
+    width: 1500px;
+    height: 450px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  .hero-slider {
+    display: flex;
+    width: 100%; /* 5 slides */
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slide {
+    width: 100%;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Text and Buttons */
+.slide-content {
+  position: absolute;
+  top: 300px;
+  left: 600px;
+  color: #fff;
+  font-size: 10px;
+  z-index: 2;
+}
+/* Buttons */
+.slide-content .btn {
+  display: inline-block;
+  font-size: 16px;
+  padding: 2px 6px;
+  margin: 2px 2px 0 0;
+  background-color: #f0c040;
+  color: #000;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+/* Heading and paragraph */
+.slide-content h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+  -webkit-text-stroke: 1px black;
+}
+  .slide-content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+  }
+  
+  /* Navigation Arrows */
+  .arrow {
+    position: absolute;
+    bottom: 10px;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+  }
+  .arrow.prev { left: 10px; }
+  .arrow.next { right: 10px; }
+  
+  /* Dot Indicators */
+  .dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 3;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .dot.active {
+    background-color: #f0c040;
+  }
+  
+
+
+  /* ========== Category Grid Section ========== */
+  .category-grid {
+    padding: 2rem 1rem;
+  }
+  
+  .grid-container.custom-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+    height: 500px; /* Total height for 3 rows */
+  }
+  
+  .category-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .category-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .category-box:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* Assign specific grid areas */
+ 
+  .box1 {
+    grid-column: 1;
+    grid-row: span 3;
+    height: 700px;
+    width: 700px;
+  }
+  
+  .box2 {
+    grid-column: 2;
+    grid-row: 1;
+    height:400px;
+    width: 780px;
+  }
+  
+  .box3 {
+    grid-column: 2;
+    grid-row: 2;
+    height: 285px; /* Custom height for Kids Wear */
+    width: 380px; /* Custom width for Kids Wear */
+  }
+  
+  .box4 {
+    grid-column: 3; /* Place to the right of Kids Wear */
+    grid-row: 2; /* Align vertically */
+    height: 285px; /* Match height with Kids Wear */
+    width: 380px; /* Adjust width for Gift Voucher */
+    margin-left: -395px; /* Reduce the gap between Kids Wear and Gift Voucher */
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .grid-container.custom-layout {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      height: auto;
+    }
+  
+    .box1, .box2, .box3, .box4 {
+      grid-column: auto;
+      grid-row: auto;
+      width: 100%; /* Full width for mobile screens */
+      height: auto; /* Auto height for mobile screens */
+      margin-left: 0; /* Remove margin adjustments for mobile */
+    }
+  }
+  
+  /* Overlay styling */
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .overlay .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background-color: #f2f7fc;
+    color: rgb(19, 17, 17);
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  
+  
+  /* ========== Cash on Delivery Banner ========== */
+  .cash-banner {
+    background: url("cash-banner.jpg") no-repeat center center/cover;
+    padding: 2rem 1rem;
+    text-align: center;
+    color: #1a1a1a;
+    position: relative;
+   
+    
+  }
+   
+  .cash-banner {
+    margin-top: 10rem !important;
+  }
+  .cod-banner-image {
+    margin-top: 200px !important;
+    margin-left: 50px !important;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1200x) {
+    .cash-text h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+/* ========== New Arrivals Section (Shared by Both) ========== */
+.new-arrivals {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.4rem;
+}
+
+.section-header .view-all {
+  font-size: 0.9rem;
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.section-header .view-all:hover {
+  text-decoration: underline;
+}
+
+
+/* Grid layout for product cards */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px;
+}
+
+.product-card:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer; 
+}
+
+.product-card img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  font-size: 1rem;
+  margin-top: 0.8rem;
+  color: #222;
+}
+  
+  .price {
+    color: #e60023;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+  
+  .installment {
+    font-size: 0.85rem;
+    color: #555;
+  }
+  
+  .koko-logo {
+    height: 14px;
+    vertical-align: middle;
+    margin-left: 4px;
+  }
+  
+  /* COD Badge */
+  .cod-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: #ffcc00;
+    color: #000;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 3px;
+  }
+  /* Inline container for logos */
+.payment-logos {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 4px;
+  }
+  
+  /* Scaled down logos */
+  .payment-logo {
+    height: 20px;     /* adjust as needed to match design */
+    width: auto;
+    vertical-align: middle;
+  }
+
+/* 🟢 Controls product image size */
+.product-card img {
+  width: 200px;       /* ✅ Change width here if needed */
+  height: 250px;      /* ✅ Change height here if needed */
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Optional: Ensure card centers image regardless of size */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logos under product, in one row */
+.payment-logos-below {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0.4rem;
+}
+
+/* Adjust individual logo size */
+.payment-logos-below .payment-logo {
+  height: 20px;         /* ✅ Change logo height here */
+  width: auto;
+}
+
+
+/* ========== CASH ON DELIVERY Banner with Image ========== */
+.cod-banner-image {
+    background: url('cod-banner.jpg') no-repeat center center/cover;
+    padding: 5rem 3rem;
+    text-align: center;
+    position: relative;
+    color: #fff;
+  }
+  
+  .cod-banner-image::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* dark overlay for text readability */
+    z-index: 0;
+  }
+
+/* ===== Brands You Love Section ===== */
+.brands-section {
+    padding: 3rem 1rem;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .brands-section h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #222;
+  }
+  
+  /* Responsive logo grid */
+  .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    justify-items: center;
+  }
+  
+  .brand-logo {
+    max-width: 100px;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .brand-logo:hover {
+    transform: scale(1.05);
+  }
+
+  .location-section {
+    padding: 3rem 1rem;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .location-section h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 2.5rem;
+  }
+  
+  .store-locations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .store {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .store h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .store p {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0;
+  }
+  
+  .map-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    color: #0077cc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .map-link img {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+  }
+  
+  .map-link:hover {
+    color: #0055aa;
+    text-decoration: underline;
+  }
+
+  /* ===== Footer Styles ===== */
+.footer {
+    background-color: #222;
+    color: #eee;
+    padding: 3rem 1rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  
+  .footer p,
+  .footer li {
+    color: #ccc;
+    line-height: 1.6;
+    margin: 0.3rem 0;
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer a:hover {
+    color: #f0c040;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+    font-size: 0.85rem;
+    color: #aaa;
+  }
+  
+  .footer-bottom a {
+    color: #f0c040;
+    text-decoration: none;
+  }
+  
+  

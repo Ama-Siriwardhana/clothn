@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shopping Cart</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style/cart.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+  <!-- HEADER STARTS HERE -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="assests/logo.png" alt="Rich Look Logo" />
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="womens.html">Womens</a></li>
+          <li><a href="#">Mens</a></li>
+          <li><a href="#">Baby & Kids</a></li>
+          <li><a href="#">Bags & Shoes</a></li>
+          <li><a href="#">Home & Lifestyle</a></li>
+          <li><a href="#">Gift & Souvenirs</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <a href="#" id="search-icon"><img src="assests/search-icon.svg" alt="Search" /></a>
+        <div class="search-box" id="search-box">
+          <input type="text" placeholder="Type your search..." />
+          <button id="close-search">✖</button>
+        </div>
+        <a href="login.html"><img src="assests/login.png" alt="User" /></a>
+        <a href="signup.html" class="signup-link-icon"><img src="assests/user.png" alt="Signup" /></a>
+        <a href="#"><img src="assests/call-icon.svg" alt="Call" /></a>
+        <a href="cart.html"><img src="assests/cart-icon.svg" alt="Cart" /></a>
+      </div>
+    </div>
+  </header>
+  <!-- HEADER ENDS HERE -->
+
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <!-- Cart Item(s) -->
+      <div class="col-lg-8 mb-4" id="cart-items">
+        <div class="card p-4 mb-3 cart-item">
+          <div class="d-flex align-items-start flex-wrap">
+            <img src="https://storage.googleapis.com/a1aa/image/9c0a288b-1371-4c78-7e0b-f66715b1d2f5.jpg" alt="Peach color women dress" class="rounded me-4" style="width:90px; height:auto;">
+            <div class="flex-grow-1">
+              <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div>
+                  <strong style="font-size:1.15rem;">Peach color women dress</strong>
+                  <div class="text-muted small mt-1 mb-2">
+                    Model: 600013124<br>
+                    Expected Date: 17th June 2025
+                  </div>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <button type="button" class="btn btn-outline-secondary btn-sm px-2 py-1 minus-btn">-</button>
+                  <input type="number" value="1" min="1" class="form-control form-control-sm text-center cart-qty" style="width:40px;">
+                  <button type="button" class="btn btn-outline-secondary btn-sm px-2 py-1 plus-btn">+</button>
+                </div>
+                <div class="text-end ms-auto" style="min-width: 150px;">
+                  <div class="text-decoration-line-through text-muted" style="font-size:.95rem;">Rs. 4,290.00</div>
+                  <div class="fw-bold fs-5 text-danger">Rs. 4,290.00</div>
+                  <button type="button" class="btn btn-link text-danger px-0 mt-1 remove-btn" style="font-size:.95rem;">
+                    <i class="fa fa-trash"></i> Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <span class="me-2"><i class="fa fa-comment-dots"></i></span>
+            <a href="#" class="text-decoration-none">Click here</a> to add a note to your order.
+          </div>
+        </div>
+        <div class="card p-4 mb-3 cart-item">
+          <div class="d-flex align-items-start flex-wrap">
+            <img src="https://storage.googleapis.com/a1aa/image/45cb1fc7-71bc-48fe-0267-429457d38658.jpg" alt="Blue color women dress" class="rounded me-4" style="width:90px; height:auto;">
+            <div class="flex-grow-1">
+              <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div>
+                  <strong style="font-size:1.15rem;">Blue color women dress</strong>
+                  <div class="text-muted small mt-1 mb-2">
+                    Model: 600013125<br>
+                    Expected Date: 18th June 2025
+                  </div>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                  <button type="button" class="btn btn-outline-secondary btn-sm px-2 py-1 minus-btn">-</button>
+                  <input type="number" value="2" min="1" class="form-control form-control-sm text-center cart-qty" style="width:40px;">
+                  <button type="button" class="btn btn-outline-secondary btn-sm px-2 py-1 plus-btn">+</button>
+                </div>
+                <div class="text-end ms-auto" style="min-width: 150px;">
+                  <div class="text-decoration-line-through text-muted" style="font-size:.95rem;">Rs. 3,500.00</div>
+                  <div class="fw-bold fs-5 text-danger">Rs. 3,200.00</div>
+                  <button type="button" class="btn btn-link text-danger px-0 mt-1 remove-btn" style="font-size:.95rem;">
+                    <i class="fa fa-trash"></i> Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <span class="me-2"><i class="fa fa-comment-dots"></i></span>
+            <a href="#" class="text-decoration-none">Click here</a> to add a note to your order.
+          </div>
+        </div>
+      </div>
+      
+      <!-- Cart Summary -->
+      <div class="col-lg-4">
+        <div class="card p-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <strong>Cart Summary</strong>
+            <span id="cart-count">0 items</span>
+          </div>
+          <div class="d-flex justify-content-between mb-2">
+            <span class="text-muted">Sub-total:</span>
+            <span id="cart-subtotal">Rs. 0.00</span>
+          </div>
+          <div class="d-flex justify-content-between mb-2">
+            <span class="text-muted">Delivery Charges:</span>
+            <span>-</span>
+          </div>
+          <div class="d-flex justify-content-between border-top pt-2 mb-3">
+            <span class="fw-bold">Total:</span>
+            <span class="fw-bold" id="cart-total">Rs. 0.00</span>
+          </div>
+          <a href="checkout.html" class="btn btn-success w-100 fw-bold mb-2">Continue to Checkout</a>
+          <div class="text-muted small mt-2"><i class="fa fa-lock me-1"></i>Transactions are 100% Safe and Secure</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="js/cart.js"></script>
+</body>
+</html>

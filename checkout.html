@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    .order-summary { background: #fff; border-radius: 8px; }
+    .order-summary .fw-bold { font-size: 1.25rem; }
+    .order-summary .btn { font-size: 1.25rem; }
+    #confirm-box {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css" />
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+   <link rel="stylesheet" href="style/checkout.css" />
+</head>
+<body>
+<!-- HEADER STARTS HERE -->
+ <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <img src="assests/logo.png" alt="Rich Look Logo" />
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="womens.html">Womens</a></li>
+          <li><a href="#">Mens</a></li>
+          <li><a href="#">Baby & Kids</a></li>
+          <li><a href="#">Bags & Shoes</a></li>
+          <li><a href="#">Home & Lifestyle</a></li>
+          <li><a href="#">Gift & Souvenirs</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <a href="#" id="search-icon"><img src="assests/search-icon.svg" alt="Search" /></a>
+        <div class="search-box" id="search-box">
+          <input type="text" placeholder="Type your search..." />
+          <button id="close-search">✖</button>
+        </div>
+        <a href="login.html"><img src="assests/login.png" alt="User" /></a>
+        <a href="signup.html" class="signup-link-icon"><img src="assests/user.png" alt="Signup" /></a>
+        <a href="#"><img src="assests/call-icon.svg" alt="Call" /></a>
+        <a href="cart.html"><img src="assests/cart-icon.svg" alt="Cart" /></a>
+      </div>
+    </div>
+  </header>
+<!-- HEADER ENDS HERE -->
+
+<div class="checkout-wrapper">
+  <div class="checkout-row">
+    
+    <!-- Left Section -->
+    <div class="checkout-left">
+      <h1 class="checkout-heading">Checkout</h1>
+      
+      <div class="checkout-card">
+        <div class="step-header">
+          <span class="step-badge">1</span>
+          <span class="step-title">Shipping Information</span>
+        </div>
+
+        <!-- FORM -->
+        <div id="shipping-form-wrapper">
+          <form id="shipping-form" onsubmit="submitShipping(event)">
+            <div class="form-group">
+              <label>First and last name</label>
+              <input type="text" id="name" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>E-mail address</label>
+                <input type="email" id="email" required>
+              </div>
+              <div class="form-group">
+                <label>Mobile number</label>
+                <input type="tel" id="phone" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Address line 1</label>
+              <input type="text" id="address1" required>
+            </div>
+            <div class="form-group">
+              <label>Address line 2</label>
+              <input type="text" id="address2">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>City</label>
+                <select id="city" required>
+                  <option value="">Select City</option>
+                   <option>Colombo</option><option>Kandy</option><option>Galle</option><option>Matara</option><option>Jaffna</option><option>Negombo</option>
+  <option>Kalutara</option><option>Anuradhapura</option><option>Polonnaruwa</option><option>Ratnapura</option><option>Kurunegala</option><option>Kegalle</option><option>Trincomalee</option><option>Badulla</option><option>Nuwara Eliya</option><option>Ampara</option>
+  <option>Batticaloa</option><option>Vavuniya</option><option>Mannar</option>
+  <option>Monaragala</option><option>Hambantota</option><option>Puttalam</option><option>Chilaw</option><option>Gampaha</option><option>Matale</option><option>Kilinochchi</option>
+  <option>Mullaitivu</option><option>Hatton</option><option>Avissawella</option><option>Wattala</option><option>Dehiwala</option><option>Moratuwa</option><option>Panadura</option><option>Homagama</option><option>Maharagama</option>
+  <option>Kotikawatta</option><option>Kadawatha</option><option>Beruwala</option><option>Embilipitiya</option><option>Tangalle</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="province">Province</label>
+  <select id="province" required>
+    <option value="">Select Province</option><option>Western Province</option><option>Central Province</option><option>Southern Province</option><option>Northern Province</option>
+    <option>Eastern Province</option><option>North Western Province</option><option>North Central Province</option><option>Uva Province</option><option>Sabaragamuwa Province</option>
+  </select>
+              </div>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+        </div>
+
+        <!-- CONFIRMATION BOX -->
+        <div id="confirm-box">
+          <p><strong>Shipping Info Added ✅</strong></p>
+          <div class="edit-btn-container">
+          <button class="edit-btn" onclick="editShipping()">Change</button></div>
+        </div>
+      </div>
+      <!-- Fill Payment Info Button -->
+  <div id="show-payment-form-container">
+    <button class="fill-btn" onclick="revealPaymentForm()">Fill Payment Info</button>
+  </div>
+      <!-- PAYMENT BOX -->
+      <div id="payment-box" style="display: none;">
+  <div class="step-header">
+    <span class="step-badge">2</span>
+    <span class="step-title">Payment Information</span>
+  </div>
+
+  <!-- Hidden actual payment form -->
+  <form id="payment-form" style="display: none;" onsubmit="submitPayment(event)">
+    <div class="form-group">
+      <label for="cardType">Card Type</label>
+      <select id="cardType" required>
+        <option value="">Select Card Type</option>
+        <option value="mastercard">MasterCard</option>
+        <option value="amex">American Express (AMEX)</option>
+        <option value="visa">Visa</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="cardNumber">Card Number</label>
+      <input type="text" id="cardNumber" required maxlength="19" placeholder="1234 5678 9012 3456">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="expiry-date">Expiry Date</label>
+        <input type="date" id="expiry-date" required>
+      </div>
+      <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" required maxlength="3" placeholder="123">
+      </div>
+    </div>
+    <button type="submit" class="submit-btn">Submit Payment</button>
+  </form>
+</div>
+    </div>
+
+
+
+    <!-- Right Section -->
+    <div class="checkout-right">
+      <div class="summary-card">
+        <div class="summary-header">
+          <span class="summary-title">Order Summary</span>
+          <span id="order-count">1 item</span>
+        </div>
+        <div class="summary-total">
+          <span>Total:</span>
+          <span id="order-total">Rs. 4,290.00</span>
+        </div>
+        <div class="summary-terms">
+          By clicking the button below, you are agreeing to the
+          <a href="#">Terms and Conditions</a>
+        </div>
+        <button id="pay-btn" class="pay-btn">Continue to Pay</button>
+        <div class="summary-note">
+          <i class="fa fa-lock"></i> Transactions are 100% Safe and Secure
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<script src="js/pay.js"></script>
+</body>
+</html>

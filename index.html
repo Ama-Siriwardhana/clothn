@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rich Look | Home</title>
+
+  <!-- Link to external CSS -->
+  
+  <!-- Link to external JavaScript -->
+  <script src="script.js" defer></script>
+
+  <!-- Google Fonts (Optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Add consistent width to all sections */
+    .container, .section-wrapper {
+      max-width: 1200px;
+      margin: 0 auto; /* Centers the content horizontally */
+      padding: 2rem 15px; /* Adds some space on the sides */
+    }
+
+    .hero-slider-wrapper, .category-grid, .cod-banner-image, .product-grid, .brands-section, .location-section {
+      width: 100%; /* Ensures full width within the container */
+    }
+
+    /* Example for the Hero Section */
+    .hero-slider-wrapper img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Example for category grid */
+    .grid-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .category-box {
+      flex: 1; /* Ensures equal width for all boxes */
+      text-align: center;
+    }
+
+    .category-box img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Example for product cards */
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      width: max-content;
+    }
+
+
+  
+  </style>
+</head>
+
+
+<body>
+
+    <header class="navbar">
+        <div class="container">
+          <!-- Logo -->
+          <div class="logo">
+            <img src="assests/logo.png" alt="Rich Look Logo" />
+          </div>
+       
+          <!-- Navigation Menu -->
+          <nav class="nav-menu">
+            <ul>
+             <li><a href="womens.html">Womens</a></li>
+              <li><a href="#">Mens</a></li>
+              <li><a href="#">Baby & Kids</a></li>
+              <li><a href="#">Bags & Shoes</a></li>
+              <li><a href="#">Home & Lifestyle</a></li>
+              <li><a href="#">Gift & Souvenirs</a></li>
+            </ul>
+          </nav>
+      
+          <!-- Icons (for search, user, etc.) -->
+       <div class="nav-icons">
+  <a href="#" id="search-icon"><img src="assests/search-icon.svg" alt="Search" /></a>
+  <div class="search-box" id="search-box">
+    <input type="text" placeholder="Type your search..." />
+    <button id="close-search">✖</button>
+  </div>
+  <a href="login.html"><img src="assests/login.png" alt="User" /></a>
+  <a href="signup.html" class="signup-link-icon"><img src="assests/user.png" alt="Signup" /></a>
+  <a href="#"><img src="assests/call-icon.svg" alt="Call" /></a>
+  <a href="#"><img src="assests/heart-icon.svg" alt="Wishlist" /></a>
+  <a href="cart.html"><img src="assests/cart-icon.svg" alt="Cart" /></a>
+</div>
+        </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const searchIcon = document.getElementById('search-icon');
+            const searchBox = document.getElementById('search-box');
+      
+            // Toggle search box visibility
+            searchIcon.addEventListener('click', (event) => {
+              event.preventDefault();
+              if (searchBox.style.display === 'none' || searchBox.style.display === '') {
+                searchBox.style.display = 'block';
+              } else {
+                searchBox.style.display = 'none';
+              }
+            });
+      
+            // Hide search box when clicking outside
+            document.addEventListener('click', (event) => {
+              if (!searchBox.contains(event.target) && event.target !== searchIcon) {
+                searchBox.style.display = 'none';
+              }
+            });
+          });
+        </script>
+
+        <!-- Hero Section-->
+
+        <section class="hero">
+          <div class="hero-slider-wrapper">
+            
+            <!-- Slider -->
+            <div class="hero-slider">
+        
+              <!-- Slide 1 -->
+              <div class="slide active">
+                <img src="assests/banner1.jpg" alt="Banner 1">
+                <div class="slide-content">
+                  <h2>FUTURE LEADERS</h2>
+                  <p>Superior Quality School Uniforms</p>
+                  <a href="#" class="btn">Browse</a>
+                  <a href="#" class="btn secondary">Buy Now Pay Later</a>
+                </div>
+              </div>
+        
+              <!-- Slide 2 -->
+              <div class="slide">
+                <img src="assests/banner2.jpg" alt="Banner 2">
+                <div class="slide-content">
+                  <h2>NEW TERM DEALS</h2>
+                  <p>Exclusive Back-to-School Offers</p>
+                  <a href="#" class="btn">Browse</a>
+                  <a href="#" class="btn secondary">Shop Now</a>
+                </div>
+              </div>
+        
+              <!-- Slide 3 -->
+              <div class="slide">
+                <img src="assests/banner3.jpg" alt="Banner 3">
+                <div class="slide-content">
+                  <h2>FORMAL UNIFORMS</h2>
+                  <p>Polished Look for Every Student</p>
+                  <a href="#" class="btn">View</a>
+                  <a href="#" class="btn secondary">Buy Now</a>
+                </div>
+              </div>
+        
+              <!-- Slide 4 -->
+              <div class="slide">
+                <img src="assests/banner4.jpg" alt="Banner 4">
+                <div class="slide-content">
+                  <h2>RAINY SEASON READY</h2>
+                  <p>Durable & Dry Comfort</p>
+                  <a href="#" class="btn">Check Out</a>
+                  <a href="#" class="btn secondary">Pre-order</a>
+                </div>
+              </div>
+        
+              <!-- Slide 5 -->
+              <div class="slide">
+                <img src="assests/banner5.jpg" alt="Banner 5">
+                <div class="slide-content">
+                  <h2>TOP PICKS 2025</h2>
+                  <p>Our Bestsellers This Year</p>
+                  <a href="#" class="btn">Browse Now</a>
+                  <a href="#" class="btn secondary">Get Yours</a>
+                </div>
+              </div>
+        
+            </div>
+        
+            <!-- Arrows -->
+            <button class="arrow prev">&#10094;</button>
+            <button class="arrow next">&#10095;</button>
+        
+            <!-- Dots -->
+            <div class="dots">
+              <span class="dot active" data-slide="0"></span>
+              <span class="dot" data-slide="1"></span>
+              <span class="dot" data-slide="2"></span>
+              <span class="dot" data-slide="3"></span>
+              <span class="dot" data-slide="4"></span>
+            </div>
+        
+          </div>
+        </section>
+        
+        
+          <!-- Category Grid Section -->
+          <!-- Category Grid -->
+<section class="category-grid">
+  <div class="grid-container custom-layout">
+    <!-- Box 1: Women's Wear -->
+    <div class="category-box box1">
+      <img src="assests/womens.jpg" alt="Womens Wear" />
+      <div class="overlay">
+        <h3>Womens Wear</h3>
+        <a href="#" class="btn">Shop Now</a>
+      </div>
+    </div>
+
+    <!-- Box 2: Men's Wear -->
+    <div class="category-box box2">
+      <img src="assests/mens.jpg" alt="Mens Wear" />
+      <div class="overlay">
+        <h3>Mens Wear</h3>
+        <a href="#" class="btn">Shop Now</a>
+      </div>
+    </div>
+
+    <!-- Box 3: Kids Wear -->
+    <div class="category-box box3">
+      <img src="assests/kids.jpg" alt="Kids Wear" />
+      <div class="overlay">
+        <h3>Kids Wear</h3>
+        <a href="#" class="btn">Shop Now</a>
+      </div>
+    </div>
+
+    <!-- Box 4: Gift Vouchers -->
+    <div class="category-box box4">
+      <img src="assests/vouchers.jpg" alt="Gift Vouchers" />
+      <div class="overlay">
+        <h3>Gift Vouchers</h3>
+        <a href="#" class="btn">Shop Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Cash on Delivery Banner -->
+<section class="cash-banner">
+  <img src="assests/cod-banner.jpg" alt="cod-banner-image" />
+</section>
+<!-- ========== New Arrivals in Women ========== -->
+<section class="new-arrivals">
+  <div class="section-header">
+    <h2>New Arrivals in Women</h2>
+    <a href="#" class="view-all">View all</a>
+  </div>
+
+  <div class="product-grid" >
+    <!-- Product 1 -->
+    <div class="product-card" style="flex: 0 0 auto; text-align: center; width: 180px;">
+      <img src="assests/Wproduct1.jpg" alt="Floral Midi Dress" style="width: 100%;">
+      <h3>Floral Midi Dress</h3>
+      <p class="installment">or 3 x Rs. 1,830 with</p>
+      <div class="payment-logos-below">
+        <img src="assests/koko.png" alt="Koko" class="payment-logo">
+        <img src="assests/second-logo.png" alt="Other Payment" class="payment-logo">
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card" style="flex: 0 0 auto; text-align: center; width: 200px;">
+      <img src="assests/Wproduct2.jpg" alt="Satin Crop Top" style="width: 100%;">
+      <h3>Satin Crop Top</h3>
+      <p class="installment">or 3 x Rs. 1,650 with</p>
+      <div class="payment-logos-below">
+        <img src="assests/koko.png" alt="Koko" class="payment-logo">
+        <img src="assests/second-logo.png" alt="Other Payment" class="payment-logo">
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card" style="flex: 0 0 auto; text-align: center; width: 200px;">
+      <img src="assests/Wproduct3.jpg" alt="Satin Crop Top" style="width: 100%;">
+      <h3>Satin Crop Top</h3>
+      <p class="installment">or 3 x Rs. 1,650 with</p>
+      <div class="payment-logos-below">
+        <img src="assests/koko.png" alt="Koko" class="payment-logo">
+        <img src="assests/second-logo.png" alt="Other Payment" class="payment-logo">
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card" style="flex: 0 0 auto; text-align: center; width: 200px;">
+      <img src="assests/Wproduct4.jpg" alt="Satin Crop Top" style="width: 100%;">
+      <h3>Satin Crop Top</h3>
+      <p class="installment">or 3 x Rs. 1,650 with</p>
+      <div class="payment-logos-below">
+        <img src="assests/koko.png" alt="Koko" class="payment-logo">
+        <img src="assests/second-logo.png" alt="Other Payment" class="payment-logo">
+      </div>
+    </div>
+   
+
+    <!-- Product 5 -->
+    <div class="product-card" style="flex: 0 0 auto; text-align: center; width: 200px;">
+      <img src="assests/Wproduct5.jpg" alt="Satin Crop Top" style="width: 100%;">
+      <h3>Satin Crop Top</h3>
+      <p class="installment">or 3 x Rs. 1,650 with</p>
+      <div class="payment-logos-below">
+        <img src="assests/koko.png" alt="Koko" class="payment-logo">
+        <img src="assests/second-logo.png" alt="Other Payment" class="payment-logo">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="new-arrivals">
+  <div class="section-header">
+    <h2>New Arrivals in Men</h2>
+    <a href="#" class="view-all">View all</a>
+  </div>
+
+  <div class="product-grid" style="display: flex; gap: 30px; white-space: nowrap;  flex-wrap: nowrap;">
+    <!-- Product 1 -->
+    <div class="product-card" style="flex: 0 0 auto; text-align: center; width: 200px;">
+      <img src="assests/men1.jpg" alt="Linen Casual Shirt" style="width: 100%;">
+      <h3>Linen Casual Shirt</h3>
+      <p class="installment">or 3 x Rs. 1,830 with</p>
+      <div class="payment-logos-below">
+        <img src="assests/koko.png" alt="Koko" class="payment-logo">
+        <img src="assests/econd-logo.png" alt="Other Payment" class="payment-logo">
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card" style="flex: 0 0 auto; text-align: center; width: 200px;">
+      <img src="assests/men2.jpg" alt="Slim Fit Crew Neck Tee" style="width: 100%;">
+      <h3>Slim Fit Crew Neck Tee</h3>
+      <p class="installment">or 3 x Rs. 1,830 with</p>
+      <div class="payment-logos-below">
+        <img src="assests/koko.png" alt="Koko" class="payment-logo">
+        <img src="assests/second-logo.png" alt="Other Payment" class="payment-logo">
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card" style="flex: 0 0 auto; text-align: center; width: 200px;">
+      <img src="assests/men3.jpg" alt="Slim Fit Crew Neck Tee" style="width: 100%;">
+      <h3>Slim Fit Crew Neck Tee</h3>
+      <p class="installment">or 3 x Rs. 1,830 with</p>
+      <div class="payment-logos-below">
+        <img src="assests/koko.png" alt="Koko" class="payment-logo">
+        <img src="assests/second-logo.png" alt="Other Payment" class="payment-logo">
+      </div>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card" style="flex: 0 0 auto; text-align: center; width: 200px;">
+      <img src="assests/men4.jpg" alt="Slim Fit Crew Neck Tee" style="width: 100%;">
+      <h3>Slim Fit Crew Neck Tee</h3>
+      <p class="installment">or 3 x Rs. 1,830 with</p>
+      <div class="payment-logos-below">
+        <img src="assests/koko.png" alt="Koko" class="payment-logo">
+        <img src="assests/second-logo.png" alt="Other Payment" class="payment-logo">
+      </div>
+    </div>
+
+    <!-- Product 5 -->
+    <div class="product-card" style="flex: 0 0 auto; text-align: center; width: 200px;">
+      <img src="assests/men5.jpg" alt="Slim Fit Crew Neck Tee" style="width: 100%;">
+      <h3>Slim Fit Crew Neck Tee</h3>
+      <p class="installment">or 3 x Rs. 1,830 with</p>
+      <div class="payment-logos-below">
+        <img src="assests/koko.png" alt="Koko" class="payment-logo">
+        <img src="assests/second-logo.png" alt="Other Payment" class="payment-logo">
+      </div>
+    </div>
+   
+ 
+  </div>
+</section>
+</section>
+
+                    
+          
+
+
+
+
+ 
+  <!-- ========== New Arrivals in Men ========== -->
+
+
+
+  <!-- ========== Brands You Love Section ========== -->
+<section class="brands-section">
+    <h2>Brands You Love</h2>
+    <div class="brands-grid">
+      <img src="assests/brand1.png" alt="Brand 1" class="brand-logo">
+      <img src="assests/brand2.png" alt="Brand 2" class="brand-logo">
+      <img src="assests/brand3.png" alt="Brand 3" class="brand-logo">
+      <img src="assests/brand4.png" alt="Brand 4" class="brand-logo">
+      <img src="assests/brand5.png" alt="Brand 5" class="brand-logo">
+      <img src="assests/brand6.png" alt="Brand 6" class="brand-logo">
+      <!-- Add more brand logos as needed -->
+    </div>
+  </section> 
+  
+  <!-- ========== Locate Us Near You Section ========== -->
+  <section class="location-section">
+    <h2>Locate Us Near You</h2>
+    <div class="store-locations">
+
+      <div class="store">
+        <h3>Rich Look - Maharagama</h3>
+        <p>No. 53, Old Road, Maharagama</p>
+        <a href="https://www.google.com/maps?q=Rich+Look+Maharagama" target="_blank" class="map-link">
+          <img src="assests/map-icon.png" alt="Map Icon"> View on Map
+        </a>
+      </div>
+
+<div class="store">
+      <h3>Rich Look - Negombo</h3>
+      <p>No. 74 • Greens Road, Negombo</p>
+      <a href="https://www.google.com/maps?q=Rich+Look+Negombo" target="_blank" class="map-link">
+        <img src="assests/map-icon.png" alt="Map Icon"> View on Map
+      </a>
+    </div>
+
+<div class="store">
+      <h3>Rich Look - Kalutara</h3>
+      <p>No. 512 • Galle Road, Kalutara South, Kalutara</p>
+      <a href="https://www.google.com/maps?q=Rich+Look+Kalutara" target="_blank" class="map-link">
+        <img src="assests/map-icon.png" alt="Map Icon"> View on Map
+      </a>
+    </div>
+  </div>
+    </div>
+  </section>
+  
+    
+  
+      </header>
+</body>
+
+<!-- ========== Footer ========== -->
+<footer class="footer">
+    <div class="footer-container">
+      
+      <!-- Column 1: Reach Us -->
+      <div class="footer-col">
+        <h3>Reach Us</h3>
+        <p><strong>Rich Look International (PVT) Ltd</strong></p>
+        <p>312, <br> Galle Road, Kalutara South,<br>Kalutara</p>
+        <p>📞 0703157575</p>
+        <p>📧 hello@richlook.lk</p>
+      </div>
+  
+      <!-- Column 2: Products -->
+      <div class="footer-col">
+        <h3>Products</h3>
+        <ul>
+          <li><a href="#">Latest Products</a></li>
+          <li><a href="#">Women's Collection</a></li>
+          <li><a href="#">Men's Collection</a></li>
+        </ul>
+      </div>
+  
+      <!-- Column 3: About Us -->
+      <div class="footer-col">
+        <h3>About Us</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Return, Exchange & Refund Policy</a></li>
+          <li><a href="#">Fine Print</a></li>
+          <li><a href="#">Promotions</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Fine Print -->
+      <div class="footer-col">
+        <h3>Fine Print</h3>
+        <ul>
+          <li><a href="#">Promotions</a></li>
+        </ul>
+      </div>
+  
+    </div>
+  
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p>Copyright © 2025 Rich Look International (PVT) Ltd. All rights reserved.</p>
+      <p>Powered by <a href="https://zenegal.store" target="_blank">Zenegal.Store</a></p>
+    </div>
+  </footer> 
+</html>
