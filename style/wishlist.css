@@ -1,0 +1,123 @@
+/* Wishlist Page Styles */
+.wishlist-title {
+  font-size: 2rem;
+  text-align: left;
+  margin-bottom: 2rem;
+  color: #2f4cbc;
+  font-weight: 600;
+}
+
+.empty-msg {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 20px;
+  color: #666;
+  margin-top: 50px;
+}
+
+.wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+.wishlist-card {
+  background: white;
+  border-radius: 10px;
+  width: 25%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+
+.wishlist-card:hover {
+  transform: scale(1.03);
+}
+
+.image-container {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.image-container img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  align-self: start;
+  border-radius: 6px;
+}
+
+.wishlist-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.wishlist-card .price {
+  color: #e60023;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+
+.wishlist-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.add-to-cart-btn {
+  background-color: #242526;        
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-to-cart-btn:hover {
+  background-color: #030508;       
+}
+
+
+.remove-btn {
+  background-color: #e60023;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.remove-btn:hover {
+  background-color: #c0001a;
+}  
+
+.wishlist-success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px 20px;
+  border: 1px solid #c3e6cb;
+  border-radius: 6px;
+  margin: 10px auto;
+  width: fit-content;
+  font-weight: bold;
+  text-align: center;
+  transition: opacity 0.5s ease;
+}
